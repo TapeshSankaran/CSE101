@@ -5,7 +5,7 @@
 // Japheth Frolick, August 2019
 // C. Seshadhri, Jan 2020
 
-#include "linkedlist.h"
+#include "LinkedList.h"
 #include <cstdlib>
 #include <iostream>
 #include <vector> 
@@ -187,7 +187,7 @@ void LinkedList :: DeleteLast(int k) {
     if (last < 0) return;
     curr = head;
 
-    for (int i = 0; i < last; i++) {
+    for (int i = 0; i < last-1; i++) {
         curr = curr->next;
     }
 

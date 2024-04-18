@@ -43,7 +43,7 @@ int main(int argc, char** argv)
         {
             output << myList.print() << endl; // write printed list to file, and add new line
             cout << "Printing" << endl;
-            cout << myList.print() << endl; // printing to console
+            cout << myList.print()+"\n" << endl; // printing to console
             continue; // move on to next command
         }
 
@@ -61,10 +61,29 @@ int main(int argc, char** argv)
             cout << "Delete "+to_string(val) << endl;
             myList.deleteNode(val);
         }
-        if(strcmp(op,"rev") == 0) // reverse list
+        if(strcmp(op,"del") == 0) // reverse list
         {
-            cout << "Reverse "+to_string(val) << endl;
+            cout << "Delete Last Instance "+to_string(val) << endl;
             myList.DeleteLast(val);
+        }
+        if(strcmp(op,"pal") == 0) // reverse list
+        {
+            cout << "List is Palindrome? "+to_string(myList.isPalindrome()) << endl;
+        }
+        if(strcmp(op,"rot") == 0) // reverse list
+        {
+            cout << "Rotate "+to_string(val) << endl;
+            myList.Rotate(val);
+        }
+        if(strcmp(op,"hot") == 0) // reverse list
+        {
+            cout << "Rotating "+to_string(val)+" to Head" << endl;
+            myList.HeadRotate(val);
+        }
+        if(strcmp(op,"ret") == 0) // reverse list
+        {
+            cout << "Reversing "+to_string(val)+" to Tail" << endl;
+            myList.ReverseTail(val);
         }
      }
 
