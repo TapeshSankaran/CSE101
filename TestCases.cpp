@@ -75,15 +75,25 @@ int main(int argc, char** argv)
             cout << "Rotate "+to_string(val) << endl;
             myList.Rotate(val);
         }
-        if(strcmp(op,"hot") == 0) // reverse list
+        if(strcmp(op,"hot") == 0) // head rotate
         {
             cout << "Rotating "+to_string(val)+" to Head" << endl;
             myList.HeadRotate(val);
         }
-        if(strcmp(op,"ret") == 0) // reverse list
+        if(strcmp(op,"ret") == 0) // reverse
         {
             cout << "Reversing "+to_string(val)+" to Tail" << endl;
             myList.ReverseTail(val);
+        }
+        if(strcmp(op,"dea") == 0) // reverse
+        {
+            cout << "Deleting Duplicates of "+to_string(val) << endl;
+            myList.Dedup(val);
+        }
+        if(strcmp(op,"rev") == 0) // reverse
+        {
+            cout << "Reverse " << endl;
+            //myList.Reverse();
         }
      }
 

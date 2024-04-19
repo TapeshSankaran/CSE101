@@ -1,17 +1,22 @@
 i 20
+i 20
 i 40
 i 30
 i 20
 i 20
 i 30
 i 40
+i 20
 p
 del 20
 p
-pal 1
-del 40
+pal
+dea 20
 p
-pal 1
-rot 3
+hot 30
 p
-
+pal
+rev
+p
+ret 30
+p

@@ -1,5 +1,5 @@
-CXX = g++
-CXXFLAGS = -Wall
+CXX = g++ 
+CXXFLAGS = -Wall -gdwarf-4
 
 OBJECTS = LinkedList.o TestCases.o
 

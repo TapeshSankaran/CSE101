@@ -127,10 +127,37 @@ int LinkedList :: length()
 }
 
 void LinkedList :: HeadRotate(int k) {
+    if (head == NULL || head->next == NULL || head->data == k) return;
+    
+    Node *curr = head;
+    while (curr->next != NULL) {
+        if (curr->next->data == k) {
+            Node *klink = curr->next;
+            curr->next = curr->next->next;
+            klink->next = head;
+            head = klink;
+            return;
+        }
+        curr = curr->next;
+    }
+}
 
+Node* LinkedList :: Reverse(Node *h) {
+    Node *prev = NULL;
+    Node *curr = h;
+    Node *next;
+    while (curr != NULL) {
+        next = curr->next;
+        curr->next = prev;
+        prev = curr;
+        curr = next;
+    }
+    return prev;
 }
 
 void LinkedList :: Rotate(int k) {
+    if (head == NULL || head->next == NULL || k == 0) return;
+    
     Node *curr = head;
     int len = 1;
     while (curr->next != NULL) {
@@ -153,7 +180,19 @@ void LinkedList :: Rotate(int k) {
 }
 
 void LinkedList :: ReverseTail(int k) {
+    Node* curr = head;
+    Node* nh = NULL;
+    Node *prev = NULL;
+    while (curr != NULL && curr->data == k) {
+        prev = curr;
+        curr = curr->next;
+    }
     
+    if (curr == NULL) {
+        return;
+    }
+    nh = Reverse(curr);
+    prev->next = nh;
 }
 
 bool LinkedList :: isPalindrome() {
@@ -190,10 +229,22 @@ void LinkedList :: DeleteLast(int k) {
     for (int i = 0; i < last-1; i++) {
         curr = curr->next;
     }
-
     curr->next = curr->next->next;
 }
 
 void LinkedList :: Dedup(int k) {    
-
+    if (head == NULL || head->next == NULL) return;
+    Node *curr = head;
+    bool firstf = false;
+    if (curr->data == k) firstf = true;
+    while (curr->next != NULL) {
+        if (curr->next->data == k) {
+            if (firstf == true) {
+                curr->next = curr->next->next;
+                continue;
+            }
+            firstf = true;
+        }
+        curr = curr->next;
+    }
 }

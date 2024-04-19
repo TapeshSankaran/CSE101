@@ -34,6 +34,7 @@ class LinkedList
 
         // Advanced functions follow
         void HeadRotate(int); // reverse every segment of int entries
+        Node* Reverse(Node*); // reverse every segment of int entries
         void Rotate(int); // reverse every segment of int entries
         void ReverseTail(int); // reverse every segment of int entries
         bool isPalindrome(); // reverse every segment of int entries
